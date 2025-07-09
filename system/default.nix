@@ -6,7 +6,6 @@
     ./desktop.nix
     ./security.nix
     ./services.nix
-    ./services.nix
     ./bluetooth.nix
     ./networking.nix
     ./environment.nix

@@ -1,4 +1,3 @@
-# in /etx/nixos/hosts/<hostname>/users.nix > imported by configuration.nix
 {pkgs, ...}: let
   # userList = ["rocco"]; # Specify users
   userList = builtins.attrNames (builtins.readDir ../../users); # All users

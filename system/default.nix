@@ -4,8 +4,9 @@
     ./boot.nix
     ./audio.nix
     ./desktop.nix
-    ./services.nix
     ./security.nix
+    ./services.nix
+    ./bluetooth.nix
     ./networking.nix
     ./environment.nix
   ];

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
@@ -13,6 +9,8 @@
       };
     };
     tmp.cleanOnBoot = true;
+    kernelPackages = pkgs.linuxPackages_zen;
+
     kernelParams = [
       "quiet"
       "splash"
@@ -21,17 +19,5 @@
       "udev.log_priority=3"
       "boot.shell_on_fail"
     ];
-    consoleLogLevel = 0;
-    initrd.verbose = false;
-
-    plymouth = {
-      enable = true;
-      theme = lib.mkForce "cuts_alt";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = ["cuts_alt"];
-        })
-      ];
-    };
   };
 }

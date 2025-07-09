@@ -27,17 +27,22 @@
     XDG_STATE_HOME = "$HOME/.local/state";
   };
 
-  services.desktopManager = {
-    gnome.enable = true;
+  services = {
+    desktopManager = {
+      gnome.enable = true;
+    };
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    xserver.enable = true;
   };
-  services.displayManager.sddm.enable = true;
-  services.xserver.enable = true;
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
-
   environment.systemPackages = with pkgs; [
     xdg-utils
     desktop-file-utils

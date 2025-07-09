@@ -3,16 +3,6 @@
   pkgs,
   ...
 }: {
-  hardware.bluetooth = {
-    enable = lib.mkDefault true;
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-        Experimental = lib.mkDefault true;
-      };
-    };
-  };
-
   security.rtkit.enable = lib.mkDefault true;
   services.pipewire = {
     enable = lib.mkDefault true;
@@ -39,7 +29,6 @@
 
   services = {
     pulseaudio.enable = lib.mkDefault false;
-    blueman.enable = lib.mkDefault true;
   };
   environment.systemPackages = with pkgs; [
     pavucontrol

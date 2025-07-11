@@ -47,6 +47,7 @@
     lshw
     usbutils
     pciutils
+    xdg-utils
     git
     nmap
     netcat

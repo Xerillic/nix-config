@@ -3,7 +3,7 @@
   userList = builtins.attrNames (builtins.readDir ../../users); # All users
 
   mkDotfileUnit = username: let
-    dotfilesDir = ../../users/${username}/dotfiles;
+    dotfilesDir = ../../users/${username}/home;
   in
     if builtins.pathExists dotfilesDir
     then {

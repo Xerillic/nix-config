@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
+    ../../system/extra/steam.nix
     ./users.nix
   ];
 

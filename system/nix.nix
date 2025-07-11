@@ -37,7 +37,7 @@
   };
 
   system.autoUpgrade = {
-    enable = lib.mkDefault true;
+    enable = lib.mkDefault false;
     dates = "03:00";
     flake = "../";
     flags = [

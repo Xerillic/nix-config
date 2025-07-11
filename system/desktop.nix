@@ -9,6 +9,7 @@
     config = {
       common = {
         default = ["gtk"];
+        hyprland.default = ["wlr" "hyprland"];
         "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
         "org.freedesktop.impl.portal.ScreenCast" = ["wlr"];
         "org.freedesktop.impl.portal.Screenshot" = ["wlr"];
@@ -40,6 +41,7 @@
   programs.hyprland = {
     enable = true;
     withUWSM = true;
+    xwayland.enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };

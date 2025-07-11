@@ -7,9 +7,9 @@
     enable = true;
     xdgOpenUsePortal = true;
     config = {
+      hyprland.default = ["wlr" "hyprland"];
       common = {
         default = ["gtk"];
-        hyprland.default = ["wlr" "hyprland"];
         "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
         "org.freedesktop.impl.portal.ScreenCast" = ["wlr"];
         "org.freedesktop.impl.portal.Screenshot" = ["wlr"];

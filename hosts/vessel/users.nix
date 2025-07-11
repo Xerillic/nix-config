@@ -15,9 +15,11 @@
           Type = "oneshot";
           User = username;
           ExecStart = "${pkgs.rsync}/bin/rsync -a ${dotfilesDir}/ /home/${username}/";
+          ExecStartPost = "${pkgs.coreutils}/bin/touch /home/${username}/.dotfiles_seeded";
         };
-        ConditionPathExists = "!/home/${username}/.dotfiles_seeded";
-        ExecStartPost = "${pkgs.coreutils}/bin/touch /home/${username}/.dotfiles_seeded";
+        unitConfig = {
+          ConditionPathExists = "!/home/${username}/.dotfiles_seeded";
+        };
       };
     }
     else null;
